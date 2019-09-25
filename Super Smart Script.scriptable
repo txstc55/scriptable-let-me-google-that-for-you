@@ -1,0 +1,12 @@
+{
+  "always_run_in_app" : true,
+  "icon" : {
+    "color" : "cyan",
+    "glyph" : "user-graduate"
+  },
+  "name" : "Super Smart Script",
+  "script" : "question = new Alert()\n\nvar x;\n\nquestion.title=\"Question Alert\"\nquestion.message=\"What is the question?\"\nquestion.addTextField(\"input your question\", \"\")\nquestion.addAction(\"Give me answer\")\nquestion.addCancelAction(\"Abort! Abort!!!\")\nlet a= await question.presentAlert()\n\n\nif (a!=-1){\n  x= question.textFieldValue(0)\n  enco= encodeURIComponent(x)\n  url= \"https:\/\/lmgtfy.com\/?q=\"+enco+\"&iie=1\"\n  Safari.openInApp(url)\n}\n\n",
+  "share_sheet_inputs" : [
+
+  ]
+}
